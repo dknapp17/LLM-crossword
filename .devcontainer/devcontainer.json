@@ -1,8 +1,8 @@
 {
 	"name": "poetry3-poetry-pyenv",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
 	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
 	// "features": {},
@@ -16,25 +16,12 @@
 	// 👇 Configure tool-specific properties.
 	"customizations": {
         "vscode": {
-            "extensions":["ms-python.python", 
-				"njpwerner.autodocstring",
-				"ms-python.vscode-pylance",
-				"ms-azuretools.vscode-docker",
-				"ms-toolsai.jupyter",
-				"ms-python.debugpy"]
+            "extensions":["ms-python.python", "njpwerner.autodocstring"]
             }
 		},
 		"features": {
-			"ghcr.io/devcontainers/features/aws-cli:1": {
-				"version": "latest"
-			},
-			"ghcr.io/devcontainers/features/git:1": {
-				"ppa": true,
-				"version": "latest"
-			}
-		// 	"ghcr.io/devcontainers-extra/features/mongosh-homebrew:1": {
-		// 		"version": "latest"
-		// 	}
+			"ghcr.io/devcontainers/features/aws-cli:1": {},
+			"ghcr.io/devcontainers/features/git:1": {}
 		}
 
 	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.

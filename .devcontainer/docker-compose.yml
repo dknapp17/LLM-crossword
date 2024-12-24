@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+
+    # volumes:
+    #   - ../..:/workspaces:cached
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+
+    # depends_on:
+    #   - mongo # Example dependency on a database service
+
+    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
+    # network_mode: service:db
+  # mongo:
+  #   image: mongo:latest
+  #   container_name: "llm_engineering_mongo"
+  #   logging:
+  #     options:
+  #       max-size: 1g
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: "llm_engineering"
+  #     MONGO_INITDB_ROOT_PASSWORD: "llm_engineering"
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     - mongo_data:/data/db
+  #   networks:
+  #     - local
+  #   restart: always
