@@ -25,8 +25,16 @@
             }
 		},
 		"features": {
-			"ghcr.io/devcontainers/features/aws-cli:1": {},
-			"ghcr.io/devcontainers/features/git:1": {}
+			"ghcr.io/devcontainers/features/aws-cli:1": {
+				"version": "latest"
+			},
+			"ghcr.io/devcontainers/features/git:1": {
+				"ppa": true,
+				"version": "latest"
+			}
+		// 	"ghcr.io/devcontainers-extra/features/mongosh-homebrew:1": {
+		// 		"version": "latest"
+		// 	}
 		}
 
 	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.

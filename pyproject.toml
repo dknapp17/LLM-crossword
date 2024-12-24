@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "llm-crossword"
+version = "0.1.0"
+description = "package for fine tuning LLMs to solve and create crosswords"
+authors = ["dknapp <github.com/dknapp17>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.11"
+
+
+[tool.poetry.group.orchestration.dependencies]
+zenml = "^0.71.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
