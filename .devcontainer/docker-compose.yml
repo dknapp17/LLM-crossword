@@ -17,19 +17,28 @@ services:
 
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     # network_mode: service:db
-  # mongo:
-  #   image: mongo:latest
-  #   container_name: "llm_engineering_mongo"
-  #   logging:
-  #     options:
-  #       max-size: 1g
-  #   environment:
-  #     MONGO_INITDB_ROOT_USERNAME: "llm_engineering"
-  #     MONGO_INITDB_ROOT_PASSWORD: "llm_engineering"
-  #   ports:
-  #     - 27017:27017
-  #   volumes:
-  #     - mongo_data:/data/db
-  #   networks:
-  #     - local
-  #   restart: always
+  mongo:
+    image: mongo:latest
+    container_name: "cw_llm_mongo"
+    logging:
+      options:
+        max-size: 1g
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "cw_llm"
+      MONGO_INITDB_ROOT_PASSWORD: "cw_llm"
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - local
+    restart: always
+
+volumes:
+  mongo_data:
+  qdrant_data:
+  
+networks:
+  local:
+    driver: bridge
+
