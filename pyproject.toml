@@ -17,6 +17,11 @@ zenml = "^0.71.0"
 
 [tool.poetry.group.logging.dependencies]
 loguru = "^0.7.3"
+tqdm = "^4.67.1"
+
+
+[tool.poetry.group.db.dependencies]
+pymongo = "^4.10.1"
 
 [build-system]
 requires = ["poetry-core"]
