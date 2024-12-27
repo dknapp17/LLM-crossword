@@ -25,7 +25,8 @@
 				"ms-python.debugpy",
 				"ms-python.autopep8",
 				"ms-toolsai.jupyter",
-				"eamodio.gitlens"]
+				"eamodio.gitlens",
+				"mongodb.mongodb-vscode"]
             }
 		},
 		"features": {
