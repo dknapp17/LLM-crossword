@@ -24,8 +24,8 @@ class Settings(BaseSettings):
     # --- Otherwise, default values values work fine. ---
 
     # MongoDB database
-    DATABASE_HOST: str = "mongodb://llm_engineering:llm_engineering@127.0.0.1:27017"
-    DATABASE_NAME: str = "twin"
+    DATABASE_HOST: str = "mongodb://cw_llm:cw_llm@127.0.0.1:27017"
+    DATABASE_NAME: str = "cw"
 
     # Qdrant vector database
     USE_QDRANT_CLOUD: bool = False
