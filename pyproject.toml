@@ -8,35 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "~3.11"
-ipykernel = "^6.29.5"
 
-
-[tool.poetry.group.orchestration.dependencies]
-zenml = "^0.71.0"
-
-
-[tool.poetry.group.logging.dependencies]
-loguru = "^0.7.3"
-tqdm = "^4.67.1"
-
-
-[tool.poetry.group.db.dependencies]
-pymongo = "^4.10.1"
-
-
-[tool.poetry.group.LLM.dependencies]
-sentence-transformers = "^3.3.1"
-langchain = "^0.3.13"
-langchain-community = "^0.3.13"
-
-
-[tool.poetry.group.vector_db.dependencies]
-qdrant-client = "^1.12.2"
-
-
-[tool.poetry.group.scraping.dependencies]
-bs4 = "^0.0.2"
-html2text = "^2024.2.26"
 
 [build-system]
 requires = ["poetry-core"]
