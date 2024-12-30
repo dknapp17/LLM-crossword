@@ -36,6 +36,7 @@ qdrant-client = "^1.12.2"
 
 [tool.poetry.group.scraping.dependencies]
 bs4 = "^0.0.2"
+html2text = "^2024.2.26"
 
 [build-system]
 requires = ["poetry-core"]
