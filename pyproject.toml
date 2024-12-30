@@ -33,6 +33,10 @@ langchain-community = "^0.3.13"
 [tool.poetry.group.vector_db.dependencies]
 qdrant-client = "^1.12.2"
 
+
+[tool.poetry.group.scraping.dependencies]
+bs4 = "^0.0.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
