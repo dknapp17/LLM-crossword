@@ -8,6 +8,7 @@ from .custom_article import CustomArticleCrawler
 from .github import GithubCrawler
 from .linkedin import LinkedInCrawler
 from .medium import MediumCrawler
+from .xw import XWinfoCrawler
 
 
 class CrawlerDispatcher:
@@ -32,6 +33,11 @@ class CrawlerDispatcher:
 
     def register_github(self) -> "CrawlerDispatcher":
         self.register("https://github.com", GithubCrawler)
+
+        return self
+
+    def register_xwordinfo(self) -> "CrawlerDispatcher":
+        self.register("https://xwordinfo.com", XWinfoCrawler)
 
         return self
 

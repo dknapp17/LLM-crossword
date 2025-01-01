@@ -6,7 +6,7 @@ settings:
     synchronous: false
     
 parameters:
-  user_full_name: Harry Zheng # [First Name(s)] [Last Name]
+  user_full_name: David Knapp # [First Name(s)] [Last Name]
   links:
     # cwordinfo
-    - https://www.xwordinfo.com/Crossword?date=12/29/2024
+    - https://www.xwordinfo.com/Crossword?date=1/1/2025

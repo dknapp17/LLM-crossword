@@ -47,3 +47,10 @@ class ArticleDocument(Document):
 
     class Settings:
         name = DataCategory.ARTICLES
+
+
+class XWinfoDocument(Document):
+    link: str
+
+    class Settings:
+        name = DataCategory.CROSSWORDS
