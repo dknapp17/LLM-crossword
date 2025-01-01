@@ -80,6 +80,10 @@ parameters:
         - https://maximelabonne.substack.com/p/efficiently-iterating-over-rows-in-a-pandas-dataframe-7dd5f9992c01
         - https://maximelabonne.substack.com/p/q-learning-for-beginners-2837b777741
         - https://maximelabonne.substack.com/p/how-to-start-machine-learning-for-developers-in-2022-390af12b193f
+    - user_full_name: Harry Zheng # [First Name(s)] [Last Name]
+      links:
+        # xword info
+        - https://www.xwordinfo.com/Crossword?date=12/29/2024
   # Generate instruct dataset pipeline parameters
   test_split_size: 0.1
   push_to_huggingface: false

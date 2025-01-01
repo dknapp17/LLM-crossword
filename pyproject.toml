@@ -57,6 +57,10 @@ kubernetes = "^30.1.0"
 sagemaker-huggingface-inference-toolkit = "^2.4.0"
 
 
+
+[tool.poetry.group.customizations.dependencies]
+ipykernel = "^6.29.5"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -70,9 +74,11 @@ build-backend = "poetry.core.masonry.api"
 run-digital-data-etl-alex = "echo 'It is not supported anymore.'"
 run-digital-data-etl-maxime = "poetry run python -m tools.run --run-etl --no-cache --etl-config-filename digital_data_etl_maxime_labonne.yaml"
 run-digital-data-etl-paul = "poetry run python -m tools.run --run-etl --no-cache --etl-config-filename digital_data_etl_paul_iusztin.yaml"
+run-digital-data-etl-test = "poetry run python -m tools.run --run-etl --no-cache --etl-config-filename digital_data_etl_test.yaml"
 run-digital-data-etl = [
     "run-digital-data-etl-maxime",
     "run-digital-data-etl-paul",
+    "run-digital-data-etl-test"
 ]
 run-feature-engineering-pipeline = "poetry run python -m tools.run --no-cache --run-feature-engineering"
 run-generate-instruct-datasets-pipeline = "poetry run python -m tools.run --no-cache --run-generate-instruct-datasets"
