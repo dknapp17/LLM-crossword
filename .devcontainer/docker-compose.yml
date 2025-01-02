@@ -12,35 +12,49 @@ services:
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
 
-    network_mode: service:mongo
+#     network_mode: service:mongo
 
-    # depends_on:
-    #   - mongo # Example dependency on a database service
+#     # depends_on:
+#     #   - mongo # Example dependency on a database service
 
-    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-    # network_mode: service:db
-  mongo:
-    image: mongo:latest
-    container_name: "cw_llm_mongo"
-    logging:
-      options:
-        max-size: 1g
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: "cw_llm"
-      MONGO_INITDB_ROOT_PASSWORD: "cw_llm"
-    ports:
-      - 27017:27017
-    volumes:
-      - mongo_data:/data/db
-    networks:
-      - local
-    restart: always
+#     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
+#     # network_mode: service:db
+#   mongo:
+#     image: mongo:latest
+#     container_name: "cw_llm_mongo"
+#     logging:
+#       options:
+#         max-size: 1g
+#     environment:
+#       MONGO_INITDB_ROOT_USERNAME: "cw_llm"
+#       MONGO_INITDB_ROOT_PASSWORD: "cw_llm"
+#     ports:
+#       - 27017:27017
+#     volumes:
+#       - mongo_data:/data/db
+#     networks:
+#       - local
+#     restart: always
 
-volumes:
-  mongo_data:
-  qdrant_data:
+#   qdrant:
+#     image: qdrant/qdrant:latest
+#     container_name: "llm_engineering_qdrant"
+#     ports:
+#       - 6333:6333
+#       - 6334:6334
+#     expose:
+#       - 6333
+#       - 6334
+#     volumes:
+#       - qdrant_data:/qdrant/storage
+#     networks:
+#       - local
+#     restart: always
+    
+# volumes:
+#   mongo_data:
+#   qdrant_data:
   
-networks:
-  local:
-    driver: bridge
-
+# networks:
+#   local:
+#     driver: bridge
