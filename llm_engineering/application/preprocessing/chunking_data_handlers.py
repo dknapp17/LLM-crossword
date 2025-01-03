@@ -12,7 +12,7 @@ from llm_engineering.domain.cleaned_documents import (
     CleanedRepositoryDocument,
 )
 
-from .operations import chunk_article, chunk_text
+from .operations import chunk_article, chunk_crossword, chunk_text
 
 CleanedDocumentT = TypeVar("CleanedDocumentT", bound=CleanedDocument)
 ChunkT = TypeVar("ChunkT", bound=Chunk)
@@ -148,7 +148,7 @@ class CrosswordChunkingHandler(ChunkingDataHandler):
         data_models_list = []
 
         cleaned_content = data_model.content
-        chunks = chunk_article(
+        chunks = chunk_crossword(
             cleaned_content, min_length=self.metadata["min_length"], max_length=self.metadata["max_length"]
         )
 
