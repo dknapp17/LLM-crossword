@@ -6,3 +6,7 @@ def clean_text(text: str) -> str:
     text = re.sub(r"\s+", " ", text)
 
     return text.strip()
+
+
+def clean_crossword(text: str) -> str:
+    return text

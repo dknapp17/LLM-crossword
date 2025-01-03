@@ -55,3 +55,12 @@ class EmbeddedRepositoryChunk(EmbeddedChunk):
         name = "embedded_repositories"
         category = DataCategory.REPOSITORIES
         use_vector_index = True
+
+
+class EmbeddedCrosswordChunk(EmbeddedChunk):
+    link: str
+
+    class Config:
+        name = "embedded_crosswords"
+        category = DataCategory.CROSSWORDS
+        use_vector_index = True

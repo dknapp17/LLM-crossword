@@ -6,17 +6,20 @@ from llm_engineering.domain.types import DataCategory
 from .chunking_data_handlers import (
     ArticleChunkingHandler,
     ChunkingDataHandler,
+    CrosswordChunkingHandler,
     PostChunkingHandler,
     RepositoryChunkingHandler,
 )
 from .cleaning_data_handlers import (
     ArticleCleaningHandler,
     CleaningDataHandler,
+    CrosswordCleaningHandler,
     PostCleaningHandler,
     RepositoryCleaningHandler,
 )
 from .embedding_data_handlers import (
     ArticleEmbeddingHandler,
+    CrosswordEmbeddingHandler,
     EmbeddingDataHandler,
     PostEmbeddingHandler,
     QueryEmbeddingHandler,
@@ -33,6 +36,8 @@ class CleaningHandlerFactory:
             return ArticleCleaningHandler()
         elif data_category == DataCategory.REPOSITORIES:
             return RepositoryCleaningHandler()
+        elif data_category == DataCategory.CROSSWORDS:
+            return CrosswordCleaningHandler()
         else:
             raise ValueError("Unsupported data type")
 
@@ -64,6 +69,8 @@ class ChunkingHandlerFactory:
             return ArticleChunkingHandler()
         elif data_category == DataCategory.REPOSITORIES:
             return RepositoryChunkingHandler()
+        elif data_category == DataCategory.CROSSWORDS:
+            return CrosswordChunkingHandler()
         else:
             raise ValueError("Unsupported data type")
 
@@ -97,6 +104,8 @@ class EmbeddingHandlerFactory:
             return ArticleEmbeddingHandler()
         elif data_category == DataCategory.REPOSITORIES:
             return RepositoryEmbeddingHandler()
+        elif data_category == DataCategory.CROSSWORDS:
+            return CrosswordEmbeddingHandler()
         else:
             raise ValueError("Unsupported data type")
 

@@ -3,6 +3,7 @@ from typing import Generic, TypeVar
 
 from llm_engineering.domain.cleaned_documents import (
     CleanedArticleDocument,
+    CleanedCrosswordDocument,
     CleanedDocument,
     CleanedPostDocument,
     CleanedRepositoryDocument,
@@ -12,9 +13,10 @@ from llm_engineering.domain.documents import (
     Document,
     PostDocument,
     RepositoryDocument,
+    XWinfoDocument,
 )
 
-from .operations import clean_text
+from .operations import clean_crossword, clean_text
 
 DocumentT = TypeVar("DocumentT", bound=Document)
 CleanedDocumentT = TypeVar("CleanedDocumentT", bound=CleanedDocument)
@@ -64,6 +66,19 @@ class RepositoryCleaningHandler(CleaningDataHandler):
             content=clean_text(" #### ".join(data_model.content.values())),
             platform=data_model.platform,
             name=data_model.name,
+            link=data_model.link,
+            author_id=data_model.author_id,
+            author_full_name=data_model.author_full_name,
+        )
+
+
+class CrosswordCleaningHandler(CleaningDataHandler):
+    def clean(self, data_model: XWinfoDocument) -> CleanedCrosswordDocument:
+        valid_content = [content for content in data_model.content.values() if content]
+        return CleanedCrosswordDocument(
+            id=data_model.id,
+            content=clean_crossword(" #### ".join(valid_content)),
+            platform=data_model.platform,
             link=data_model.link,
             author_id=data_model.author_id,
             author_full_name=data_model.author_full_name,

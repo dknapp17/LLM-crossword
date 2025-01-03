@@ -40,3 +40,12 @@ class CleanedRepositoryDocument(CleanedDocument):
         name = "cleaned_repositories"
         category = DataCategory.REPOSITORIES
         use_vector_index = False
+
+
+class CleanedCrosswordDocument(CleanedDocument):
+    link: str
+
+    class Config:
+        name = "cleaned_crossword"
+        category = DataCategory.CROSSWORDS
+        use_vector_index = False
